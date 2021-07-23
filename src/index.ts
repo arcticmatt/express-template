@@ -3,8 +3,8 @@ import express from "express";
 const main = async () => {
   const app = express();
 
-  const port = 4000;
-  const host = 'localhost';
+  const port = Number(process.env.SERVER_PORT);
+  const host = process.env.SERVER_HOST as string;
 
   app.get('/', (req, res) => {
     res.send('Hello World!')
